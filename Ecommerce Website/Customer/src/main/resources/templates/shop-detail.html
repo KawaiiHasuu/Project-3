@@ -48,27 +48,13 @@
                                 <select id="basic" class="selectpicker show-tick form-control"
                                         data-placeholder="$ USD" onchange="location = this.value;">
                                     <option>--Select--</option>
-                                    <option value="http://localhost:8020/shop/shop-detail">Normal</option>
-                                    <option value="http://localhost:8020/shop/high-price">High Price → Low Price
+                                    <option value="http://localhost:9999/shop/shop-detail">Normal</option>
+                                    <option value="http://localhost:9999/shop/high-price">High Price → Low Price
                                     </option>
-                                    <option value="http://localhost:8020/shop/lower-price">Low Price → High Price
+                                    <option value="http://localhost:9999/shop/lower-price">Low Price → High Price
                                     </option>
-                                    <option value="4">Best Selling</option>
                                 </select>
                             </div>
-                            <p>Showing all results</p>
-                        </div>
-                        <div class="col-12 col-sm-4 text-center text-sm-right">
-                            <ul class="nav nav-tabs ml-auto">
-                                <li>
-                                    <a class="nav-link active" href="#grid-view" data-toggle="tab"> <i
-                                            class="fa fa-th"></i> </a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#list-view" data-toggle="tab"> <i
-                                            class="fa fa-list-ul"></i> </a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
 
@@ -164,14 +150,6 @@
     </div>
 </div>
 
-<!-- End Shop Page -->
-
-<!-- Start Feed  -->
-<div th:replace="~{fragments::instagram-box}">
-
-</div>
-
-<!-- End Feed  -->
 
 
 <!-- Start Footer  -->

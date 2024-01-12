@@ -52,7 +52,7 @@ public class AdminConfiguration {
                 .formLogin(login ->
                         login.loginPage("/login")
                                 .loginProcessingUrl("/do-login")
-                                .defaultSuccessUrl("/index", true)
+                                .defaultSuccessUrl("/categories", true)
                                 .permitAll()
                 )
                 .logout(logout ->

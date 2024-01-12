@@ -49,7 +49,6 @@
                             <th class="quantity-box">Quantity</th>
                             <th>Total Price</th>
                             <th class="total-pr">Payment Method</th>
-                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -72,9 +71,6 @@
                             </td>
                             <td class="total-pr" style="color: black">
                                 <span></span>[(${order.paymentMethod})]</span>
-                            </td>
-                            <td>
-                                <a th:href="@{/cancel-order/(id = ${order.id})}" class="button-cancel">Cancel</a>
                             </td>
                             </a>
                             </td>

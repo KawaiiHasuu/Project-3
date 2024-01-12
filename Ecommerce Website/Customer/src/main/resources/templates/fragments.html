@@ -43,49 +43,24 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="our-link">
-                    <ul>
-                        <li><a href="#"> Call US : +84967631186</a></li>
-                        <li><a href="#"><i class="fas fa-location-arrow"></i> Address: Km9, Nguyen Trai, Thanh Xuan,
-                            Ha Noi</a></li>
-                    </ul>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="login-box">
-                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In" onchange="location = this.value;">
-                        <option>Authentication</option>
-                        <option th:if = "${session.username == null}" value = "http://localhost:8889/shop/login">Sign In </option>
-                        <option th:if = "${session.username == null}" value ="http://localhost:8889/shop/register">Sign Up</option>
-                    </select>
+                <div th:if = "${session.username == null}">
+<!--                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In" onchange="location = this.value;">-->
+<!--                        <option th:if = "${session.username == null}" value = "http://localhost:9999/shop/login">Sign In </option>-->
+<!--                        <option th:if = "${session.username == null}" value ="http://localhost:9999/shop/register">Sign Up</option>-->
+<!--                    </select>-->
+                    <div style="text-align: right;">
+                        <a th:href="@{/login}" class="btn btn-outline-warning" style="display: inline-block; margin-right: 10px;">Login</a>
+                        <a th:href="@{/register}" class="btn btn-outline-warning" style="display: inline-block;">Register</a>
+                    </div>
+                </div>
+                <div style="text-align: right;" th:if = "${session.username != null}">
+                    <a th:href="@{/logout}" class="btn btn-outline-warning">Logout</a>
                 </div>
                 <div class="text-slid-box">
                     <div id="offer-box" class="carouselTicker">
-                        <ul class="offer-box">
-                            <li>
-                                <i class="fab fa-opencart"></i> Off 5% for new members
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> Freeship
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> 10% off Entire Purchase Promo code: OceanPrime
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> Off upto 10%! Shop Now
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> Off 5% for new members
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> Freeship
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> 10% off Entire Purchase Promo code: OceanPrime
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> Off 10%! Shop Now
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -105,7 +80,7 @@
                         aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" th:href="@{/}"><img th:src="@{/images/logo.png}" class="logo" width="130"
+                <a class="navbar-brand" th:href="@{/}"><img th:src="@{/images/Logo.png}" class="logo" width="130"
                                                             height="80" alt=""></a>
             </div>
             <!-- End Header Navigation -->
@@ -117,7 +92,7 @@
                     <li class="nav-item"><a class="nav-link" th:href="@{/menu}">Menu</a></li>
 
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Shop</a>
+                        <a href="#" class="nav-link" data-toggle="dropdown">Shop</a>
                         <ul class="dropdown-menu">
                             <li><a th:href="@{/shop-detail}">Shop Detail</a></li>
                             <li><a th:href="@{/orders}">Your order</a></li>
@@ -132,10 +107,8 @@
             <!-- Start Atribute Navigation -->
             <div class="attr-nav2">
                 <ul>
-                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                     <li class="side-menu">
                         <a href="#" th:href="@{/cart}">
-                            <i class="fa fa-shopping-bag"></i>
                             <span class="badge"
                                   th:text="${session.totalItems == null} ? '0' : ${session.totalItems}"></span>
                             <p>My Cart</p>
@@ -169,7 +142,7 @@
             <div class="col-lg-12">
                 <h2 th:text="${page}"></h2>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="home.html">Ocean Prime</a></li>
+                    <li class="breadcrumb-item"><a href="home.html">An Drinking Shop</a></li>
                     <li class="breadcrumb-item active" th:text="${page}"></li>
                 </ul>
             </div>
@@ -244,16 +217,16 @@
                     <div class="footer-top-box">
                         <h3>Contact Us</h3>
                         <ul class="list-time">
-                            <li><i class="fas fa-phone-square"></i> Phone number: +84967631186</li>
+                            <li><i class="fas fa-phone-square"></i> Phone number: +84123456778</li>
                             <li><i class="fas fa-envelope"></i> Email: abc@gmail.com</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Address: Km9, Nguyen Trai, Thanh Xuan</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Address: Tuong Mai, Ha Noi</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-top-box">
                         <h3>Social Media</h3>
-                        <p>Come with Ocean Prime shop - Only Fresh </p>
+                        <p>Come with An Drink shop </p>
                         <ul>
                             <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
